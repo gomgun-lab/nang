@@ -1,0 +1,16 @@
+{
+  "name": "@nang/jest-presets",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "browser/jest-preset.js",
+    "node/jest-preset.js"
+  ],
+  "dependencies": {
+    "jest": "^29.0.0"
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "^29.0.0"
+  }
+}
