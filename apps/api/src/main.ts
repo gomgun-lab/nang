@@ -28,8 +28,8 @@ async function bootstrap() {
   await app.listen(port);
 
   const baseUrl = `http://localhost:${port}`;
-  const serverUrl = `${baseUrl}/${apiPrefix}`;
-  const docsUrl = `${baseUrl}/${apiPrefix}/docs`;
+  const serverUrl = `${baseUrl}${apiPrefix}`;
+  const docsUrl = `${baseUrl}${apiPrefix}/docs`;
 
   logger.log(`🚀 Server is running on: ${serverUrl}`);
   logger.log(`📚 API Documentation: ${docsUrl}`);

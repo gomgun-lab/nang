@@ -2,6 +2,9 @@
   "name": "@nang/api",
   "version": "0.0.0",
   "private": true,
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "scripts": {
     "build": "nest build",
     "clean": "rimraf dist",

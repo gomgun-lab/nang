@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +8,106 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  passwordHash String?  @map("password_hash")
+  displayName  String   @map("display_name")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  socialAccounts SocialAccount[]
+  folders        Folder[]
+  tags           Tag[]
+  bookmarks      Bookmark[]
+
+  @@map("users")
+}
+
+model SocialAccount {
+  id         Int      @id @default(autoincrement())
+  userId     Int      @map("user_id")
+  provider   String   
+  providerId String   @map("provider_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerId])
+  @@map("social_accounts")
+}
+
+model Folder {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  name      String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bookmarks BookmarkFolder[]
+
+  @@unique([userId, name])
+  @@map("folders")
+}
+
+model Tag {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  name      String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bookmarks BookmarkTag[]
+
+  @@unique([userId, name])
+  @@map("tags")
+}
+
+model Bookmark {
+  id                   Int      @id @default(autoincrement())
+  userId               Int      @map("user_id")
+  url                  String   @db.Text
+  title                String   @db.VarChar(500)
+  description          String?  @db.Text
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+
+  user    User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  folders BookmarkFolder[]
+  tags    BookmarkTag[]
+
+  @@map("bookmarks")
+}
+
+model BookmarkFolder {
+  id         Int      @id @default(autoincrement())
+  bookmarkId Int      @map("bookmark_id")
+  folderId   Int      @map("folder_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  bookmark Bookmark @relation(fields: [bookmarkId], references: [id], onDelete: Cascade)
+  folder   Folder   @relation(fields: [folderId], references: [id], onDelete: Cascade)
+
+  @@unique([bookmarkId, folderId])
+  @@map("bookmark_folders")
+}
+
+model BookmarkTag {
+  id         Int      @id @default(autoincrement())
+  bookmarkId Int      @map("bookmark_id")
+  tagId      Int      @map("tag_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  bookmark Bookmark @relation(fields: [bookmarkId], references: [id], onDelete: Cascade)
+  tag      Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([bookmarkId, tagId])
+  @@map("bookmark_tags")
 }
