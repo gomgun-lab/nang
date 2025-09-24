@@ -38,7 +38,6 @@
     "axios": "^1.12.2",
     "bcrypt": "^6.0.0",
     "class-validator": "^0.14.2",
-    "nestjs-zod": "^5.0.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",

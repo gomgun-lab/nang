@@ -43,7 +43,7 @@ importers:
         version: 11.1.6(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)
       '@nestjs/swagger':
         specifier: github:nestjs/swagger
-        version: https://codeload.github.com/nestjs/swagger/tar.gz/7daa5b51e004dcd1fdd4c8ebc368ce179acbe0a7(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(class-validator@0.14.2)(reflect-metadata@0.2.2)
+        version: https://codeload.github.com/nestjs/swagger/tar.gz/5d3c325d11266ee361482bf7560eab015c178e62(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(class-validator@0.14.2)(reflect-metadata@0.2.2)
       '@prisma/client':
         specifier: ^6.16.2
         version: 6.16.2(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)
@@ -56,9 +56,6 @@ importers:
       class-validator:
         specifier: ^0.14.2
         version: 0.14.2
-      nestjs-zod:
-        specifier: ^5.0.1
-        version: 5.0.1(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/swagger@https://codeload.github.com/nestjs/swagger/tar.gz/7daa5b51e004dcd1fdd4c8ebc368ce179acbe0a7(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(class-validator@0.14.2)(reflect-metadata@0.2.2))(rxjs@7.8.2)(zod@4.1.8)
       passport:
         specifier: ^0.7.0
         version: 0.7.0
@@ -795,8 +792,8 @@ packages:
     peerDependencies:
       typescript: '>=4.8.2'
 
-  '@nestjs/swagger@https://codeload.github.com/nestjs/swagger/tar.gz/7daa5b51e004dcd1fdd4c8ebc368ce179acbe0a7':
-    resolution: {tarball: https://codeload.github.com/nestjs/swagger/tar.gz/7daa5b51e004dcd1fdd4c8ebc368ce179acbe0a7}
+  '@nestjs/swagger@https://codeload.github.com/nestjs/swagger/tar.gz/5d3c325d11266ee361482bf7560eab015c178e62':
+    resolution: {tarball: https://codeload.github.com/nestjs/swagger/tar.gz/5d3c325d11266ee361482bf7560eab015c178e62}
     version: 11.2.0
     peerDependencies:
       '@fastify/static': ^8.0.0
@@ -2774,18 +2771,6 @@ packages:
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  nestjs-zod@5.0.1:
-    resolution: {integrity: sha512-IjK99tpK+04UobLJJA5tlHv94Ml3wNWiRr7pRVDFJ62Jy/c/aYhMQa90WKiy7qUcmIDMWyPHQpHQN/MehESOmw==}
-    version: 5.0.1
-    peerDependencies:
-      '@nestjs/common': ^10.0.0 || ^11.0.0
-      '@nestjs/swagger': ^7.4.2 || ^8.0.0 || ^11.0.0
-      rxjs: ^7.0.0
-      zod: ^3.25.0 || ^4.0.0
-    peerDependenciesMeta:
-      '@nestjs/swagger':
-        optional: true
-
   node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
 
@@ -4567,7 +4552,7 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@nestjs/swagger@https://codeload.github.com/nestjs/swagger/tar.gz/7daa5b51e004dcd1fdd4c8ebc368ce179acbe0a7(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(class-validator@0.14.2)(reflect-metadata@0.2.2)':
+  '@nestjs/swagger@https://codeload.github.com/nestjs/swagger/tar.gz/5d3c325d11266ee361482bf7560eab015c178e62(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(class-validator@0.14.2)(reflect-metadata@0.2.2)':
     dependencies:
       '@microsoft/tsdoc': 0.15.1
       '@nestjs/common': 11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -7022,15 +7007,6 @@ snapshots:
   negotiator@1.0.0: {}
 
   neo-async@2.6.2: {}
-
-  nestjs-zod@5.0.1(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/swagger@https://codeload.github.com/nestjs/swagger/tar.gz/7daa5b51e004dcd1fdd4c8ebc368ce179acbe0a7(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(class-validator@0.14.2)(reflect-metadata@0.2.2))(rxjs@7.8.2)(zod@4.1.8):
-    dependencies:
-      '@nestjs/common': 11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      deepmerge: 4.3.1
-      rxjs: 7.8.2
-      zod: 4.1.8
-    optionalDependencies:
-      '@nestjs/swagger': https://codeload.github.com/nestjs/swagger/tar.gz/7daa5b51e004dcd1fdd4c8ebc368ce179acbe0a7(@nestjs/common@11.1.6(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(class-validator@0.14.2)(reflect-metadata@0.2.2)
 
   node-abort-controller@3.1.1: {}
 
