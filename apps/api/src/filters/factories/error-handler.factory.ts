@@ -1,5 +1,6 @@
 import { BaseExceptionHandler } from '../handlers/base-exception.handler';
 import { ErrorHandler } from '../../interface/error-handler.interface';
+import { FallbackExceptionHandler } from '../handlers/fallback-exception.handler';
 
 /**
  * @todo: Implement singleton pattern for global instance management
@@ -41,16 +42,20 @@ import { ErrorHandler } from '../../interface/error-handler.interface';
  * - Use APP_FILTER with useExisting for instance reuse
  */
 export class ErrorHandlerFactory {
-  private readonly handlers: ErrorHandler[] = [new BaseExceptionHandler()];
+  private readonly handlers: ErrorHandler[] = [
+    new BaseExceptionHandler(),
+    new FallbackExceptionHandler(),
+  ];
 
   getHandler(exception: unknown): ErrorHandler {
     const handler = this.handlers.find(candidate =>
       candidate.canHandle(exception)
     );
 
-    /**
-     * @todo: fallback handler (remove '!')
-     */
-    return handler!;
+    if (!handler) {
+      return this.handlers[this.handlers.length - 1];
+    }
+
+    return handler;
   }
 }
