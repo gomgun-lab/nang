@@ -14,9 +14,11 @@
     "db:down": "docker-compose -f docker-compose.dev.yml down",
     "db:restart": "docker-compose -f docker-compose.dev.yml restart",
     "db:logs": "docker-compose -f docker-compose.dev.yml logs -f postgres",
-    "db:clean": "docker-compose -f docker-compose.dev.yml down -v"
+    "db:clean": "docker-compose -f docker-compose.dev.yml down -v",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "prettier": "^3.6.0",
     "turbo": "^2.5.0"
   },

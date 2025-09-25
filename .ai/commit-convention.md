@@ -17,12 +17,14 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 Use one of the following action words to start your commit message:
 
 ### Primary Actions
+
 - **Add** - New features, files, or functionality
 - **Update** - Modifications to existing functionality
 - **Remove** - Deletion of code, files, or features
 - **Fix** - Bug fixes and corrections
 
 ### Secondary Actions
+
 - **Improve** - Enhancements to existing functionality
 - **Refactor** - Code restructuring without changing functionality
 - **Configure** - Configuration changes
@@ -31,6 +33,7 @@ Use one of the following action words to start your commit message:
 ## Guidelines
 
 ### Subject Line
+
 - Start with an action word (Add, Update, Remove, Fix, etc.)
 - Use present tense and imperative mood
 - Keep it concise but descriptive
@@ -38,6 +41,7 @@ Use one of the following action words to start your commit message:
 - 50 characters or less recommended
 
 ### Body (Optional)
+
 - Use bullet points for multiple changes
 - Explain what and why, not how
 - Separate from subject with blank line
@@ -46,15 +50,17 @@ Use one of the following action words to start your commit message:
 ### Examples
 
 **Good:**
+
 ```
 Add end-to-end testing support and TypeScript configuration for NestJS
 
 - Configure Jest presets for both unit and e2e tests
-- Add NestJS-specific TypeScript configuration 
+- Add NestJS-specific TypeScript configuration
 - Set up test scripts and turbo tasks
 ```
 
 **Good:**
+
 ```
 Remove unused dependencies and improve project structure
 
@@ -64,6 +70,7 @@ Remove unused dependencies and improve project structure
 ```
 
 **Good:**
+
 ```
 Update .gitignore and add VSCode settings for formatting
 ```
