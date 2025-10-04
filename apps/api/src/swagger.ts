@@ -9,4 +9,9 @@ export const SWAGGER_OPTIONS = {
 export const swaggerDocumentOptions = new DocumentBuilder()
   .setTitle(SWAGGER_OPTIONS.TITLE)
   .setDescription(SWAGGER_OPTIONS.DESCRIPTION)
+  .addCookieAuth('accessToken', {
+    type: 'apiKey',
+    in: 'cookie',
+    name: 'accessToken',
+  })
   .build();
