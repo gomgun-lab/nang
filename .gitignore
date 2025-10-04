@@ -51,3 +51,8 @@ yarn.lock
 
 # Turbo
 .turbo/
+
+# AI
+.ai/todo/
+.ai/spec/
+.cursor/mcp.json
