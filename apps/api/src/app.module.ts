@@ -5,6 +5,7 @@ import { EnvModule } from './config/env/env.module';
 import { envSchema } from './config/env/schema';
 import { GlobalExceptionFilter } from './filters/global-exception.filter';
 import { ResponseInterceptor } from './interceptors/response.interceptor';
+import { AuthModule } from './app/auth/auth.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { ResponseInterceptor } from './interceptors/response.interceptor';
       validate: env => envSchema.parse(env),
     }),
     EnvModule,
+    AuthModule,
   ],
   providers: [
     {
